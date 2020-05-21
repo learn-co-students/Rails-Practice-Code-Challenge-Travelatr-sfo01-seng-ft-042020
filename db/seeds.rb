@@ -31,4 +31,8 @@ end
       destination: Destination.all.sample
     })
   end
+
+  b = Blogger.all.first 
+  p = b.posts.first 
+  p.likes = 10
 end

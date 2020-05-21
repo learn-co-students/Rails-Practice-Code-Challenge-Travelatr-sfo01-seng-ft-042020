@@ -1,0 +1,32 @@
+<%= form_for @post do |f|%>
+  <% if @post.errors.any?   %>
+    <div id="error_explanation">
+      <%= pluralize(@post.errors.count, "error") %>
+      <ul>
+        <% @post.errors.full_messages.each do |msg|  %>
+          <li><%= msg %></li>
+        <% end  %>
+      </ul>
+    </div>
+  <% end  %>
+  
+  <div class="field<%= ' field_with_errors' if @post.errors[:title].any? %>">
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  </div>
+
+  <div class="field<%= 'field_with_errors' if @post.errors[:content].any? %>">
+    <%= f.label :content %>
+    <%= f.text_area :content %><br>
+  </div>
+
+  <%= f.collection_select :blogger_id, Blogger.all, :id, :name %><br>
+  <%= f.collection_select :destination_id, Destination.all, :id, :name %><br>
+
+  
+
+  
+  <%= f.submit %>
+
+<% end  %>
+
