@@ -1,0 +1,21 @@
+<%= @post.title %>
+<p><%= @post.content %></p>
+<ul>
+<li><%= link_to @post.destination.name, @post.destination %></li>
+<li><%= link_to @post.blogger.name, @post.destination%></li>
+</ul>
+
+
+
+<p><%= @post.likes %> <%= (@post.likes) == 1 ? 'Like' : 'Likes'%></p>
+
+<h3>New like</h3>
+
+<%= form_for @post, url: incr_likes_post_path do |f| %>
+  <div class="field">
+    <%= f.label "Like?" %>
+     
+     <%= f.radio_button :likes, 1 %>
+  </div>
+  <%= f.submit%>
+  <% end %>

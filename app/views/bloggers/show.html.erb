@@ -1,0 +1,9 @@
+<h2><%= @blogger.name %></h2>
+<p><%= @blogger.bio %></p>
+<% count = 0  %>
+<% @blogger.posts.each do |post| %>
+  <% count += post.likes  %>
+<%end  %>
+<h4>Total likes: <%= count %></h4>
+<h2>Featured Post:<h2>
+<p><%= link_to @blogger.most_likes.title, @blogger.most_likes %></p>
