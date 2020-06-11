@@ -1,0 +1,7 @@
+<h1>Post Title: <%= @post.title %></h1>
+<h2>Author: <%= link_to @post.blogger.name, @post.blogger %></h2>
+<p>Likes: <%= @post.likes %></p>
+<p><%= @post.destination.name %>, <%= @post.destination.country %></p>
+
+<p>Content: <%= @post.content %></p>
+
