@@ -1,0 +1,5 @@
+<h1>Place: <%= @destination.name %>, <%= @destination.country %> </h1>
+<h3>Posts</h3>
+<% @destination.posts.each do |post| %>
+    <%= link_to post.title, post %><br>
+<% end %>
